@@ -80,8 +80,8 @@ class DifferentialDiscountedQlearningAgent(LFAControlAgent):
         # self.reward_list.append(reward)
         self.pq.push(reward)
         # print(self.pq.pq_min.qsize())
-        top25_reward_avg = self.pq.get_top25_avg()
-        target = top25_reward_avg - self.avg_reward + self.gamma * q_next
+        # top25_reward_avg = self.pq.get_top25_avg()
+        target = reward - self.avg_reward + self.gamma * q_next
         delta = target - prediction
 
         # update the reward-rate estimate
