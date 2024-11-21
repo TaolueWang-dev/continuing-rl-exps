@@ -1,5 +1,5 @@
 {
-    "exp_name": "AC_eta0.015625_test",
+    "exp_name": "AC_eta0.015625_test_with_top25%_reward",
     "env_name": "AC",
     "csuite_env": true,
     "agent_name": "DiffDiscQ",

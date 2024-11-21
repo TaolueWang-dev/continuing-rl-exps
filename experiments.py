@@ -219,13 +219,14 @@ def run_experiment_one_config(config):
             # print(f'action: {action}\nreward: {reward}\nobs: {next_obs}')
             # print(f'reward: {reward:.3f}, r-bar: {agent.avg_reward:.3f}')
             action = agent.step(reward, process_observation(env_name, next_obs))
+
             # logging the reward at each step
             log['reward'][run][t] = reward
             # log['action'][run][t] = agent.past_action
             # log['trace'][run][t] = agent.trace
             if store_max_action_values and t > 9 * max_steps // 10:
                 log['max_value_per_step'][run][t - 9*(max_steps//10)] = agent.max_value_per_step
-
+        print(len(agent.reward_list))
         if render:
             viewer.close()
 
